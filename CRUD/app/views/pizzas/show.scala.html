@@ -1,0 +1,19 @@
+@(pizza : Pizza)
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>@pizza.sabor</title>
+</head>
+<body>
+    
+    <a href="@routes.PizzasController.show(pizza.id)">@pizza.id</a>
+    <p>Sabor: @pizza.sabor</p>
+    <p>Tamanho: @pizza.tamanho</p>
+    <p>Preço: @pizza.preco</p>
+    
+    <form action="@routes.PizzasController.edit(pizza.id)">
+        <button type="submit">Editar</button>
+    </form>
+</body>
+</html>

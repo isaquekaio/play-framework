@@ -1,0 +1,20 @@
+@(pizzaFrom : Form[Pizza])
+@import helper._
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Pizza</title>
+</head>
+<body>
+    <h1>Create Pizza</h1>
+    @helper.form(action = routes.PizzasController.save()){
+        @helper.inputText(pizzaFrom("id"))
+        @helper.inputText(pizzaFrom("sabor"))
+        @helper.inputText(pizzaFrom("tamanho"))
+        @helper.inputText(pizzaFrom("preco"))
+        <input type="submit" value="Create Pizza">
+    }
+</body>
+</html>

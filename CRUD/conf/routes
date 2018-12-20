@@ -1,0 +1,15 @@
+
+# An example controller showing a sample home page
+GET     /                     controllers.HomeController.index
+
+GET     /pizzas             controllers.PizzasController.index()
+GET     /pizzas/edit/:id     controllers.PizzasController.edit(id: Integer)
+POST    /pizzas/edit        controllers.PizzasController.update()
+GET     /pizzas/create      controllers.PizzasController.create()
+GET     /pizzas/:id          controllers.PizzasController.show(id: Integer)
+POST    /pizzas/create      controllers.PizzasController.save()
+GET     /pizzas/delete/:id   controllers.PizzasController.destroy(id: Integer)
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

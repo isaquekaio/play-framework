@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/home/linux/Desenvolvedor/PlayFramework/sistemas-web/app/controllers/PizzasController.java:32:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   method hasErros()[0m
+[0m[[0m[31merror[0m] [0m[0m  location: variable form of type play.data.Form<models.Pizza>[0m
+[0m[[0m[31merror[0m] [0m[0m        if(form.hasErros()){[0m

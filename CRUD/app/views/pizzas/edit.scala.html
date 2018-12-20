@@ -1,0 +1,19 @@
+@(pizzaFrom : Form[Pizza])
+@import helper._
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atualizar Pizza</title>
+</head>
+<body>
+@helper.form(action = routes.PizzasController.update()){
+    @helper.inputText(pizzaFrom("id"))
+    @helper.inputText(pizzaFrom("sabor"))
+    @helper.inputText(pizzaFrom("tamanho"))
+    @helper.inputText(pizzaFrom("preco"))
+    <input type="submit" value="Atualizar">
+}
+</body>
+</html>

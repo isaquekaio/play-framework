@@ -1,0 +1,28 @@
+@(pizzas : Set[Pizza])
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Todas as pizzas</title>
+</head>
+<body>
+    <h1>Todas as Pizzas</h1>
+    <table>
+        <tr><td>ID</td><td>Sabor</td><td>Tamanho</td><td>Preço</td><td>Opções</td></tr>
+        @for(pizza <- pizzas){
+        <tr>
+            <td><a href="@routes.PizzasController.show(pizza.id)">@pizza.id</a></td>
+            <td>@pizza.sabor</td>
+            <td>@pizza.tamanho</td>
+            <td>@pizza.preco</td>
+            <td><a href="@routes.PizzasController.destroy(pizza.id)">Excluir</a></td>
+        </tr>
+        }
+    </table>
+    <form action="@routes.PizzasController.create">
+        <button type="submit">Inserir</button>
+    </form>
+
+</body>
+</html>
