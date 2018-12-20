@@ -1,0 +1,11 @@
+@(disciplinas : List[Disciplina])
+
+<h1>Todas as disciplinas</h1>
+
+@for(d <- disciplinas){
+    <p>Codigo: @d.codigo</p>
+    <p>Nome: @d.nome</p>
+    <p>Carga horaria: @d.carga_horaria</p>
+    <p>Ementa: @d.ementa</p>
+    <br>
+}

@@ -1,0 +1,10 @@
+@(cursos : List[Curso])
+
+<h1>Todos os cursos</h1>
+
+@for(c <- cursos){
+  <p>Codigo: @c.codigo</p>
+  <p>Nome: @c.nome</p>
+  <p>Nível: @c.nivel</p>
+  <br>
+}
