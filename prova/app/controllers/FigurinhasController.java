@@ -56,7 +56,7 @@ public class FigurinhasController extends Controller {
         return ok(edit.render(formFigurinha));
     }
 
-    public Result update(){ //ok ou não
+    public Result update(){
         if (!session().containsKey("id")){
             return redirect(routes.HomeController.login());
         }
