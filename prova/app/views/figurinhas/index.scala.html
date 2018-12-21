@@ -1,0 +1,26 @@
+@(figurinhas: List[Figurinha])
+<form action="@routes.HomeController.sair()">
+    <button type="submit">sair</button>
+</form>
+
+@helper.form(action=routes.FigurinhasController.buscar()){
+    <h1>Buscar elemento</h1>
+    <input type="text" name="nome" id="nome">
+    <button action="submit">Buscar</button>
+}
+
+@main("Minhas Figurinha") {
+<div class="form-produto">
+    @for(f <- figurinhas){
+        <p>Número: @f.numero</p>
+        <p>Nome: @f.nome</p>
+        <p>Preço: @f.preco</p>
+        <form action="@routes.FigurinhasController.destroy(f.numero)">
+            <button type="submit">Excluir</button>
+        </form>
+        <form action="@routes.FigurinhasController.edit(f.numero)">
+            <button type="submit">Atualizar</button>
+        </form>
+    }
+</div>
+}

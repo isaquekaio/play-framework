@@ -1,0 +1,12 @@
+@(figurinha: Figurinha)
+
+@main("Exibir produto") {
+    <div class="form-produto">
+        <p>Número: @figurinha.numero</p>
+        <p>Nome: @figurinha.nome</p>
+        <p>Preço: @figurinha.preco</p>
+        <form action="@routes.FigurinhasController.edit(figurinha.numero)">
+          <button type="submit">Editar</button>
+        </form>
+    </div>
+}

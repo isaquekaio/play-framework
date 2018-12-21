@@ -1,0 +1,19 @@
+@(formFigurinha: Form[Figurinha])
+
+@import helper._
+
+@main("Editar Figurinha") {
+    <div class="form-produto">
+        <h1>Editar Figurinha</h1>
+
+        @form(action=routes.FigurinhasController.update()){
+        @helper.inputText(formFigurinha("numero"))
+        @helper.inputText(formFigurinha("nome"))
+        @helper.inputText(formFigurinha("preco"))
+        <button action="submit">Atualizar</button>
+        }
+    </div>
+}
+
+
+
