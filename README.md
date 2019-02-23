@@ -1,3 +1,3 @@
 # Play framework
 
-Repositório criado para auxílio na disciplina "Desenvolvimento Web" do curso de "TADS" 
+Repositório criado para auxílio a disciplina __Desenvolvimento Web__ do curso de __TADS__ 
