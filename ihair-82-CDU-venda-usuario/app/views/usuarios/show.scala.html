@@ -1,0 +1,12 @@
+@(usuario: Usuario)
+
+@main("Exibir perfil do usuario") {
+    <div class="">
+        <p>Nome: @usuario.nome</p>
+        <p>Email: @usuario.email</p>
+
+        <form action="@routes.UsuariosController.edit(usuario.id)">
+            <button type="submit">Editar</button>
+        </form>
+    </div>
+}

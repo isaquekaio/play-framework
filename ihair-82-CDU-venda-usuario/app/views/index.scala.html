@@ -1,0 +1,20 @@
+@(produtos: List[Produto])
+
+@main("iHair") {
+    <div class="container">
+        <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                @for(produto <- produtos){
+                    <!--<p>Id: @produto.id</p>-->
+                    <p>Nome: @produto.nome</p>
+                    <p>Descrição: @produto.descricao</p>
+                    <p>Marca: @produto.marca</p>
+                    <p>Preço: @produto.preco</p>
+                    <form action="@routes.HomeController.show(produto.id)">
+                      <button type="submit">Visualizar</button>
+                    </form>
+                }
+            </div>
+        <div class="col-sm-2"></div>
+    </div>
+}

@@ -1,0 +1,19 @@
+@(formUsuario: Form[Usuario])
+
+@import helper._
+
+@main("Cadastrar Usuario") {
+
+    <div class="">
+        <h1>Cadastrar Usuario</h1>
+
+        @form(action = routes.UsuariosController.save){
+            <!-- @helper.inputText(formUsuario("id")) -->
+            @helper.inputText(formUsuario("nome"))
+            @helper.inputText(formUsuario("email"))
+            @helper.inputPassword(formUsuario("senha"))
+
+            <button action="submit" id="btnformprod">Cadastrar Usuario</button>
+        }
+    </div>
+}

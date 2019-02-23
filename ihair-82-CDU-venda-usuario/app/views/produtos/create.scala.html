@@ -1,0 +1,23 @@
+@(formProduto: Form[Produto])
+
+@import helper._
+
+@main("Cadastrar Produto") {
+
+<div class="form-produto">
+<h1>Cadastrar Produto</h1>
+
+@form(action = routes.ProdutosController.save, 'enctype -> "multipart/form-data"){
+    <!-- @helper.inputText(formProduto("id")) -->
+    @helper.inputText(formProduto("nome"))
+    @helper.textarea(formProduto("descricao"))
+    @helper.inputText(formProduto("preco"))
+    @helper.inputText(formProduto("marca"))
+
+    @helper.inputFile(formProduto("imagem"),'name -> "imagem")
+    @helper.inputFile(formProduto("imagem"),'name -> "imagem")
+    @helper.inputFile(formProduto("imagem"),'name -> "imagem")
+    <button action="submit" id="btnformprod">Cadastrar Produto</button>
+    }
+</div>
+}

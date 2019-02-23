@@ -1,0 +1,19 @@
+@(produtos: List[Produto])
+
+@main("Meus produtos") {
+<div class="form-produto">
+    @for(produto <- produtos){
+        <p>@produto.id</p>
+        <p>Nome: @produto.nome</p>
+        <p>Descrição: @produto.descricao</p>
+        <p>Marca: @produto.marca</p>
+        <p>Preço: @produto.preco</p>
+        <form action="@routes.ProdutosController.destroy(produto.id)">
+            <button type="submit">Excluir</button>
+        </form>
+        <form action="@routes.ProdutosController.edit(produto.id)">
+            <button type="submit">Atualizar</button>
+        </form>
+    }
+</div>
+}

@@ -1,0 +1,20 @@
+@(formProduto: Form[Produto])
+
+@import helper._
+
+@main("Editar Produto") {
+    <div class="form-produto">
+        <h1>Editar Produto</h1>
+
+        @form(action=routes.ProdutosController.update()){
+        @helper.inputText(formProduto("nome"))
+        @helper.inputText(formProduto("descricao"))
+        @helper.inputText(formProduto("marca"))
+        @helper.inputText(formProduto("preco"))
+        <button action="submit">Atualizar</button>
+        }
+    </div>
+}
+
+
+

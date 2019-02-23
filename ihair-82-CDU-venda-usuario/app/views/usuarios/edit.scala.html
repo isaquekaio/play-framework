@@ -1,0 +1,16 @@
+@(formUsuario: Form[Usuario])
+
+@import helper._
+
+@main("Editar Usuario") {
+    <div class="">
+        <h1>Editar Usuario</h1>
+
+        @form(action=routes.UsuariosController.update()){
+            @helper.inputText(formUsuario("nome"))
+            @helper.inputText(formUsuario("email"))
+            @helper.inputPassword(formUsuario("senha"))
+            <button action="submit">Atualizar</button>
+        }
+    </div>
+}

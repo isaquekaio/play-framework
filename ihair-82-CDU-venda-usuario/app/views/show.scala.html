@@ -1,0 +1,14 @@
+@(produto: Produto)
+
+@main("Exibir produto") {
+    <div class="form-produto">
+        <p>@produto.nome</p>
+        <p>Nome: @produto.nome</p>
+        <p>Descrição: @produto.descricao</p>
+        <p>Marca: @produto.marca</p>
+        <p>Preço: @produto.preco</p>
+        <form action="@routes.HomeController.compra(produto.id)">
+          <button type="submit">Comprar</button>
+        </form>
+    </div>
+}

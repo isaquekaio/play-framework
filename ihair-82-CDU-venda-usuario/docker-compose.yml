@@ -1,0 +1,38 @@
+# docker-compose.yml
+#
+# Configuração para execução em container da
+# infra-estrutura de 'devops' do IFRN
+#
+# Autor : Jorgiano Vidal
+# Data  : 27/08/2018
+#
+# IMPORTANTE: Não modifique este arquivo se não tem CERTEZA do que está fazendo.
+#
+
+version: '2'
+services:
+  db:
+    image: postgres:10-alpine
+    volumes:
+      - ihair_pgsql_data_10:/var/lib/postgresql/data
+    restart: always
+    environment:
+      POSTGRES_DB: ihairdb
+      POSTGRES_USER: ihairpguser
+      POSTGRES_PASSWORD: ihairpgpasswd
+      TZ: "America/Recife"
+  web:
+    depends_on:
+      - db
+    image: nexus.devops.ifrn.edu.br/{{ repository }}:latest
+    volumes:
+      - web_tmp:/tmp
+    ports:
+      - "{{ port }}:9000"
+    restart: always
+    environment:
+      LANG: "C.UTF-8"
+      TZ: "America/Recife"
+volumes:
+  web_tmp:
+  ihair_pgsql_data_10:

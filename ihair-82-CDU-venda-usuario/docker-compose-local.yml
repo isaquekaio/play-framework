@@ -1,0 +1,26 @@
+# docker-compose.yml
+#
+# Configuração para execução em container local
+# Para executar:
+#     docker-compose -f docker-compose-local.yml
+#
+# Autor : Jorgiano Vidal
+# Data  : 27/08/2018
+#
+# IMPORTANTE: Não modifique este arquivo se não tem CERTEZA do que está fazendo.
+#
+
+version: '2'
+services:
+  web:
+    image: ihair:latest
+    volumes:
+      - web_tmp:/tmp
+    ports:
+      - "9000:9000"
+    restart: always
+    environment:
+      LANG: "C.UTF-8"
+      TZ: "America/Recife"
+volumes:
+  web_tmp:
